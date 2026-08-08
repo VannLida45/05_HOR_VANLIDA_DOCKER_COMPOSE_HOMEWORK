@@ -8,7 +8,6 @@ services:
     networks:
       - my_network
 
-
     environment:
       DB_USERNAME: postgres
       DB_PASSWORD: 123456
@@ -47,6 +46,21 @@ services:
     ports:
       - "9000:9000"
       - "9001:9001"
+
+  rabbitmq:
+    image: rabbitmq:4.3.4-management
+    container_name: rabbit_container
+    hostname: my-rabbit
+    ports:
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: 12345
+
+
+
+
+
 volumes:
   postgres_data:
 
