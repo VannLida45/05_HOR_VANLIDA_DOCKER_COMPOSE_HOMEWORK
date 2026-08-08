@@ -1,5 +1,6 @@
 HELP.md
-.env
+postgres_data/
+.env.example
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
