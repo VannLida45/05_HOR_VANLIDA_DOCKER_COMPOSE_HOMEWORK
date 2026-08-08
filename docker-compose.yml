@@ -46,7 +46,6 @@ services:
   postgres-keycloak:
     image: postgres:18-alpine
     container_name: keycloak_pg
-
     environment:
       POSTGRES_DB: keyclock_db
       POSTGRES_USER: postgres
@@ -85,8 +84,8 @@ services:
       - "8443:8443"
     environment:
       KC_DB: postgres
-      KC_BOOTSTRAP_ADMIN_USERNAME: admin
-      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+      KC_BOOTSTRAP_ADMIN_USERNAME: lida
+      KC_BOOTSTRAP_ADMIN_PASSWORD: 1234567
       KC_DB_USERNAME: postgres
       KC_DB_PASSWORD: 123456
       KC_DB_URL: jdbc:postgresql://postgres-keycloak:5432/keyclock_db
@@ -97,7 +96,6 @@ services:
         condition: service_healthy
     networks:
       - my_network
-
 
 volumes:
   postgres_data:
