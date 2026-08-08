@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN gradle build --no-daemon -x test
+RUN gradle build --no-daemon -x test --build-cache
 
 FROM eclipse-temurin:21-jdk
 

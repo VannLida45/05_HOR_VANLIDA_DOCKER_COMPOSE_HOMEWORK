@@ -41,7 +41,12 @@ services:
       timeout: 5s
       retries: 5
       start_period: 10s
-
+  rustfs:
+    image: rustfs/rustfs
+    container_name: rustfs
+    ports:
+      - "9000:9000"
+      - "9001:9001"
 volumes:
   postgres_data:
 
